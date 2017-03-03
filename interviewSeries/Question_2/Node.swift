@@ -9,7 +9,7 @@
 import Foundation
 
 public class Node {
-    var value: Any
+    var value: Any?
     var next: Node?
     var prev: Node?
     
@@ -20,7 +20,7 @@ public class Node {
         return self.prev == nil
     }
     
-    init (value: Any) {
+    init (value: Any?) {
         self.value = value
     }
 }

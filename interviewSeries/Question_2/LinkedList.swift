@@ -70,30 +70,32 @@ public class LinkedList {
         //check for linked list with single node
         guard listHead.next != nil else {
             self.tail = listHead
-            return self.head
+            return listHead
         }
-
-        //this is 7
-        let nextToPass = listHead.next?.next
-        
-        //first run this is 5
-        let node1 = listHead
-        //first run this is 6
-        let node2 = node1.next
-        //adjust boolean so that we have the list head ivar set
-        if (firstRun) {
-            self.head = node2
-        }
-        //6 now points to 5
-        node2?.next = node1
-        //5 now points to 7 (we need to get it to point to 8)
-        if let passToFunc = nextToPass {
-            node2?.next = passToFunc
-            return _pairWiseSwap(listHead: passToFunc, firstRun: false)
-        }
-        return self.head
+//
+//        //this is 7
+//        let nextToPass = listHead.next?.next
+//        
+//        //first run this is 5
+//        let node1 = listHead
+//        //first run this is 6
+//        let node2 = node1.next
+//        //adjust boolean so that we have the list head ivar set
+//        if (firstRun) {
+//            self.head = node2
+//        }
+//        //6 now points to 5
+//        node2?.next = node1
+//        //5 now points to 7 (we need to get it to point to 8)
+//        if let passToFunc = nextToPass {
+//            node2?.next = passToFunc
+//            return _pairWiseSwap(listHead: passToFunc, firstRun: false)
+//        }
+//        return self.head
+        return listHead
     }
 }
+
 //MARK "PROTOCOL EXTENSIONS"
 
 

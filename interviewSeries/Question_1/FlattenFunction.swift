@@ -12,18 +12,31 @@ func flatten (input: [Any]) -> [Any] {
     
     var outputArray = [Any] ()
     
-    for e in input {
+    /*for i in 0..<input.count {
+        let data = input[i]
+        (data is [Any]) ? outputArray += flatten(input: [data]) : outputArray.append(data)
+    }*/
+    
+    for element in input {
+        if let sublist = element as? [Any] {
+            outputArray += flatten(input: sublist)
+        } else {
+            outputArray.append(element)
+        }
+        
+    }
+        
+    /*for e in input {
         switch e {
         case let e as [Any]:
             outputArray += flatten(input: e)
         default:
             outputArray.append(e)
         }
-    }
+    }*/
     
     return outputArray
 }
-
 
 
 

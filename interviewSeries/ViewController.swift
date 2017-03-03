@@ -21,9 +21,9 @@ class ViewController: UIViewController {
 //        newList.pushValueToList(value: 9)
 //        newList.pushValueToList(value: 10)
 //        print(newList)
-//        newList.pairwiseSwap()
 //        print("testing swapped list")
-//        print(newList)
+//        let printList = newList.pairwiseSwap()
+//        print(printList ?? "empty list")
         
         let arr = [1, [2, 3, 4]] as [Any]
         print (flatten(input: arr))
