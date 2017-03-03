@@ -9,20 +9,8 @@
 import Foundation
 
 func flatten (input: [Any]) -> [Any] {
-    let length = input.count;
-    var outputArray = [Any] ()
     
-    //output array += the array we are iterating over.flattened else output.append(item iterated over)
-    /*for i in 0 ..< length {
-     let data = input[i];
-     if data is Array<Any> {
-     //PROBLEM IS HERE, WE HIT INFINITE LOOP
-     outputArray += flatten(input: [data]);
-     }
-     else {
-     outputArray.append(data);
-     }
-     }*/
+    var outputArray = [Any] ()
     
     for e in input {
         switch e {
@@ -35,3 +23,8 @@ func flatten (input: [Any]) -> [Any] {
     
     return outputArray
 }
+
+
+
+
+

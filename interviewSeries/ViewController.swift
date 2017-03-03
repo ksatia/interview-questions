@@ -25,8 +25,7 @@ class ViewController: UIViewController {
 //        print("testing swapped list")
 //        print(newList)
         
-        let arr = [1, 4, "any", ["first_nested", 4, 29, "blank", ["second_nested", 5, ["third_nested"]]]] as [Any]
-        
+        let arr = [1, [2, 3, 4]] as [Any]
         print (flatten(input: arr))
     }
 
