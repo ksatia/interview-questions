@@ -16,6 +16,7 @@
 		2A447AEF1E6748ED00D10510 /* interviewSeriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A447AEE1E6748ED00D10510 /* interviewSeriesUITests.swift */; };
 		2A447AFD1E67490100D10510 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A447AFC1E67490100D10510 /* Node.swift */; };
 		2A447AFF1E67490900D10510 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A447AFE1E67490900D10510 /* LinkedList.swift */; };
+		2A447B031E69D5C700D10510 /* FlattenFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A447B021E69D5C700D10510 /* FlattenFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2A447AF01E6748ED00D10510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A447AFC1E67490100D10510 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Node.swift; path = ../Node.swift; sourceTree = "<group>"; };
 		2A447AFE1E67490900D10510 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedList.swift; path = ../LinkedList.swift; sourceTree = "<group>"; };
+		2A447B021E69D5C700D10510 /* FlattenFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlattenFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +105,8 @@
 			children = (
 				2A447ACE1E6748ED00D10510 /* AppDelegate.swift */,
 				2A447AD01E6748ED00D10510 /* ViewController.swift */,
-				2A447AFC1E67490100D10510 /* Node.swift */,
-				2A447AFE1E67490900D10510 /* LinkedList.swift */,
+				2A447B011E69D56E00D10510 /* Question_1 */,
+				2A447B001E69D55A00D10510 /* Question_2 */,
 				2A447AD21E6748ED00D10510 /* Main.storyboard */,
 				2A447AD51E6748ED00D10510 /* Assets.xcassets */,
 				2A447AD71E6748ED00D10510 /* LaunchScreen.storyboard */,
@@ -129,6 +131,23 @@
 				2A447AF01E6748ED00D10510 /* Info.plist */,
 			);
 			path = interviewSeriesUITests;
+			sourceTree = "<group>";
+		};
+		2A447B001E69D55A00D10510 /* Question_2 */ = {
+			isa = PBXGroup;
+			children = (
+				2A447AFC1E67490100D10510 /* Node.swift */,
+				2A447AFE1E67490900D10510 /* LinkedList.swift */,
+			);
+			name = Question_2;
+			sourceTree = "<group>";
+		};
+		2A447B011E69D56E00D10510 /* Question_1 */ = {
+			isa = PBXGroup;
+			children = (
+				2A447B021E69D5C700D10510 /* FlattenFunction.swift */,
+			);
+			name = Question_1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +287,7 @@
 				2A447AFD1E67490100D10510 /* Node.swift in Sources */,
 				2A447AD11E6748ED00D10510 /* ViewController.swift in Sources */,
 				2A447AFF1E67490900D10510 /* LinkedList.swift in Sources */,
+				2A447B031E69D5C700D10510 /* FlattenFunction.swift in Sources */,
 				2A447ACF1E6748ED00D10510 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
