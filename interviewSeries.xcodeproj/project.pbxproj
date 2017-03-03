@@ -50,8 +50,8 @@
 		2A447AEA1E6748ED00D10510 /* interviewSeriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = interviewSeriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A447AEE1E6748ED00D10510 /* interviewSeriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = interviewSeriesUITests.swift; sourceTree = "<group>"; };
 		2A447AF01E6748ED00D10510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A447AFC1E67490100D10510 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Node.swift; path = ../Node.swift; sourceTree = "<group>"; };
-		2A447AFE1E67490900D10510 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedList.swift; path = ../LinkedList.swift; sourceTree = "<group>"; };
+		2A447AFC1E67490100D10510 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		2A447AFE1E67490900D10510 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		2A447B021E69D5C700D10510 /* FlattenFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlattenFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +139,7 @@
 				2A447AFC1E67490100D10510 /* Node.swift */,
 				2A447AFE1E67490900D10510 /* LinkedList.swift */,
 			);
-			name = Question_2;
+			path = Question_2;
 			sourceTree = "<group>";
 		};
 		2A447B011E69D56E00D10510 /* Question_1 */ = {
@@ -147,7 +147,7 @@
 			children = (
 				2A447B021E69D5C700D10510 /* FlattenFunction.swift */,
 			);
-			name = Question_1;
+			path = Question_1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
