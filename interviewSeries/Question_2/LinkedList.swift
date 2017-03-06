@@ -58,45 +58,56 @@ public class LinkedList {
     //we could also include methods to removeNodeAtIndex and an init method
     
     
-    func pairwiseSwap () -> Node? {
-        return _pairWiseSwap(listHead: head!, firstRun: true)
-        
+    func pairwiseSwap () {
+        _pairWiseSwap(listHead: head, firstRun: true)
     }
     
-//    fileprivate func _pairWiseSwap (listHead: Node, firstRun:Bool) -> Node? {
-//        //empty list check
-//        guard count > 0 else {
-//            return nil
-//        }
-//        //check for linked list with single node
-//        guard listHead.next != nil else {
-//            self.tail = listHead
-//            return listHead
-//        }
-//
-//        //this is 7
-//        let nextToPass = listHead.next?.next
-//        
-//        //first run this is 5
-//        let node1 = listHead
-//        //first run this is 6
-//        let node2 = node1.next
-//        //adjust boolean so that we have the list head ivar set
-//        if (firstRun) {
-//            self.head = node2
-//        }
-//        //6 now points to 5
-//        node2?.next = node1
-//        //5 now points to 7 (we need to get it to point to 8)
-//        if let passToFunc = nextToPass {
-//            node2?.next = passToFunc
-//            return _pairWiseSwap(listHead: passToFunc, firstRun: false)
-//        }
-//    }
-//        return self
+    fileprivate func _pairWiseSwap (listHead: Node?, firstRun:Bool) {
+        //empty list check
+        guard count > 0 else {
+            fatalError("Index out of range")
+        }
         
-//}
+        //assume our input is ["a", "b", "c", "d"]
+        
+        //a
+        var node1 = listHead
+        //b
+        var node2 = listHead?.next
+        //c
+        var tempNode = node2?.next
+
+        //adjust boolean so that we have the list head ivar set
+        if (firstRun) {
+            self.head = node2
+        }
+        
+
+        
+        while(true) {
+
+            //b points to a
+            node2?.next = node1
+            //and a should point to d
+            node1?.next = tempNode?.next
+            
+            //now node 1 needs to point to c, node 2 needs to point to d and temp needs to point to e
+            node1 = tempNode
+            node2 = tempNode?.next
+            tempNode = node2?.next
+            
+            guard node1 != nil else {
+                node1?.next = nil
+                self.tail = node1
+                break
+            }
+        }
+    }
+    
 }
+
+
+
 
 
 //MARK "PROTOCOL EXTENSIONS"

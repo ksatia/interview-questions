@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 func flatten (input: [Any]) -> [Any] {
     
     var outputArray = [Any] ()
