@@ -60,18 +60,19 @@ public class LinkedList {
     
     func pairwiseSwap () -> Node? {
         return _pairWiseSwap(listHead: head!, firstRun: true)
+        
     }
     
-    fileprivate func _pairWiseSwap (listHead: Node, firstRun:Bool) -> Node? {
-        //empty list check
-        guard count > 0 else {
-            return nil
-        }
-        //check for linked list with single node
-        guard listHead.next != nil else {
-            self.tail = listHead
-            return listHead
-        }
+//    fileprivate func _pairWiseSwap (listHead: Node, firstRun:Bool) -> Node? {
+//        //empty list check
+//        guard count > 0 else {
+//            return nil
+//        }
+//        //check for linked list with single node
+//        guard listHead.next != nil else {
+//            self.tail = listHead
+//            return listHead
+//        }
 //
 //        //this is 7
 //        let nextToPass = listHead.next?.next
@@ -91,10 +92,12 @@ public class LinkedList {
 //            node2?.next = passToFunc
 //            return _pairWiseSwap(listHead: passToFunc, firstRun: false)
 //        }
-//        return self.head
-        return listHead
-    }
+//    }
+//        return self
+        
+//}
 }
+
 
 //MARK "PROTOCOL EXTENSIONS"
 

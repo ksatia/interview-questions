@@ -25,7 +25,9 @@ class ViewController: UIViewController {
 //        let printList = newList.pairwiseSwap()
 //        print(printList ?? "empty list")
         
-        let arr = [1, [2, 3, 4]] as [Any]
+        //let arr = [1, 4, 5, "any", ["any"[2, 3, 4]]]
+        
+        let arr = [1, 2, 3, [1, 2, [1, 2, 3, 4]]] as [Any]
         print (flatten(input: arr))
     }
 
