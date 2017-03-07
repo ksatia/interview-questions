@@ -22,8 +22,14 @@ class ViewController: UIViewController {
         newList.pushValueToList(value: 10)
         print(newList)
         print("testing swapped list")
-        newList.pairwiseSwap()
+        newList.head = newList.pairwiseSwap()
         print(newList)
+        if let head = newList.head?.value {
+            print(head)
+        }
+        if let tail = newList.tail?.value {
+            print(tail)
+        }
         
         //let arr = [1, 4, 5, "any", ["any"[2, 3, 4]]]
         

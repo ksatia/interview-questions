@@ -21,12 +21,11 @@ public class LinkedList {
         let newNode = Node(value: value)
         
         if let tail = tail {
-            
             tail.next = newNode
             newNode.next = nil
             self.tail = newNode
-            
         }
+            
         else {
             head = newNode
             tail = newNode
@@ -36,38 +35,55 @@ public class LinkedList {
     
     //we could write this in as a subscript function and allow it to get and set values (for set value we would just call an insert:atIndex: function).
     func valueAtIndex (index:Int)->Any? {
-     //use a neat guard statement to eliminate negative indices and indices greater than the list size
-     guard index >= 0 && index < count else {
-     fatalError("Index out of range")
-     }
-     switch(index) {
-     case 0:
-     return head?.value
-     case count-1:
-     return tail?.value
-     default:
-     //only need to create this var if we hit the default statement so put it here instead of at beginning of function
-     var returnNode = head
-     for _ in 0 ..< index {
-     returnNode = returnNode!.next
-     }
-     return (returnNode?.value)
-     }
-     }
+        //use a neat guard statement to eliminate negative indices and indices greater than the list size
+        guard index >= 0 && index < count else {
+            fatalError("Index out of range")
+        }
+        switch(index) {
+        case 0:
+            return head?.value
+        case count-1:
+            return tail?.value
+        default:
+            //only need to create this var if we hit the default statement so put it here instead of at beginning of function
+            var returnNode = head
+            for _ in 0 ..< index {
+                returnNode = returnNode!.next
+            }
+            return (returnNode?.value)
+        }
+    }
     
     //we could also include methods to removeNodeAtIndex and an init method
     
     
-    func pairwiseSwap () {
-        _pairWiseSwap(listHead: head, firstRun: true)
+    func pairwiseSwap () -> Node? {
+        //_pairWiseSwap(listHead: head, firstRun: true)
+         return _recursivePairWiseSwap (listHead: head, firstRun: true)
+    }
+    
+    
+    fileprivate func _recursivePairWiseSwap (listHead: Node?, firstRun: Bool) -> Node? {
+        guard (listHead != nil || listHead?.next != nil) else {
+            listHead?.next = nil
+            self.tail = listHead
+            return listHead
+        }
+        if (firstRun) {
+            self.head = listHead?.next
+        }
+        
+        let newNode = listHead?.next
+        listHead?.next = _recursivePairWiseSwap(listHead: listHead?.next?.next, firstRun: false)
+        newNode?.next = listHead
+        return newNode
     }
     
     fileprivate func _pairWiseSwap (listHead: Node?, firstRun:Bool) {
         //empty list check
         guard count > 0 else {
-            fatalError("Index out of range")
+            fatalError("List is empty")
         }
-        
         //assume our input is ["a", "b", "c", "d"]
         
         //a
@@ -76,21 +92,17 @@ public class LinkedList {
         var node2 = listHead?.next
         //c
         var tempNode = node2?.next
-
+        
         //adjust boolean so that we have the list head ivar set
         if (firstRun) {
             self.head = node2
         }
         
-
-        
         while(true) {
-
             //b points to a
             node2?.next = node1
             //and a should point to d
             node1?.next = tempNode?.next
-            
             //now node 1 needs to point to c, node 2 needs to point to d and temp needs to point to e
             node1 = tempNode
             node2 = tempNode?.next
@@ -103,7 +115,6 @@ public class LinkedList {
             }
         }
     }
-    
 }
 
 
