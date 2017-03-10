@@ -15,7 +15,9 @@ func flatten (input: [Any]) -> [Any] {
     
     for i in 0..<input.count {
         let data = input[i]
-        (data is [Any]) ? outputArray += flatten(input: data as! [Any]) : outputArray.append(data)
+        (data is [Any]) ?
+            outputArray += flatten(input: data as! [Any]) :
+            outputArray.append(data)
     }
     
     
