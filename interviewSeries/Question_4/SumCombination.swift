@@ -8,8 +8,17 @@
 
 import Foundation
 
-func sumCombination (array: [Any], sum: int)->Bool {
-    var dict = [Any: Any]()
-    dict[0] = "one"
-    dict
+func sumCombination (array: [Int], sum: Int)->Bool {
+    var dict = [Int:Int]()
+    for element in array {
+        var key = sum-element
+        dict[element] = element
+        for value in dict.keys {
+            if dict[value] == key {
+                return true
+            }
+        }
+    }
+    return false
 }
+

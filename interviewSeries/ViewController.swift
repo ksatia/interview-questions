@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.SumCombination()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +43,10 @@ class ViewController: UIViewController {
         if let tail = newList.tail?.value {
             print(tail)
         }
+    }
+
+    func SumCombination() {
+        print (sumCombination(array: [1,2,3,4,5], sum: 12))
     }
 }
 
