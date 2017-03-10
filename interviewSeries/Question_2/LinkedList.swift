@@ -16,6 +16,10 @@ public class LinkedList {
         case End
     }
     
+    var isEmpty: Bool {
+        return count == 0
+    }
+    
     func pushValueToList (value: Any) {
         
         let newNode = Node(value: value)
@@ -64,6 +68,7 @@ public class LinkedList {
     
     
     fileprivate func _recursivePairWiseSwap (listHead: Node?, firstRun: Bool) -> Node? {
+        //nil check, var newHead = listHead.next, listHead.next = swap pairs passing in newHead.next, newHead.next = listHead, return newHead
         guard (listHead != nil || listHead?.next != nil) else {
             listHead?.next = nil
             self.tail = listHead
@@ -74,14 +79,22 @@ public class LinkedList {
         }
         
         let newNode = listHead?.next
+        guard newNode?.next != nil else {
+            listHead?.next = nil
+            self.tail = listHead
+            return listHead
+        }
+        
         listHead?.next = _recursivePairWiseSwap(listHead: listHead?.next?.next, firstRun: false)
         newNode?.next = listHead
         return newNode
     }
     
     fileprivate func _pairWiseSwap (listHead: Node?, firstRun:Bool) {
+        //we can use a dummy head that points to the head. var start = fakeHead. while start != nil and start.next != nil and start.next.next != nil -> var end = start.next.next, start.next.next = end.next, end.next = start.next, start.next = end, start = start.next.next, outside of the while loop just return fakeHead.next (actual head of list).
+        
         //empty list check
-        guard count > 0 else {
+        if (isEmpty) {
             fatalError("List is empty")
         }
         //assume our input is ["a", "b", "c", "d"]
@@ -123,7 +136,7 @@ public class LinkedList {
 
 //MARK "PROTOCOL EXTENSIONS"
 
-
+//this allows us to traverse a list with (for item in list)
 extension LinkedList : Sequence {
     public func makeIterator() -> AnyIterator<Node> {
         var currentNode = self.head
@@ -139,6 +152,8 @@ extension LinkedList : Sequence {
 }
 
 extension LinkedList: CustomStringConvertible {
+    //we can use the above sequence protocol conformance to shorten our description variable to use map -> return "[" + self.map {String($0.value)}.joinWithSeparator(" ") + "]"
+    
     public var description: String {
         var currentIndex: Int = 0
         var description: String = ""
@@ -156,3 +171,5 @@ extension LinkedList: CustomStringConvertible {
         return description
     }
 }
+
+//we could add an extension here with a copy function. Create a new list, for...in loop and append nodes to the new list. Rename our LL as _LinkedList and wrap it in another class called LinkedList. _LinkedList is private and we expose some rewritten methods. We have two lists, one called storage and the other called mutableStorage. Mutable storage is a computed property that has a get. We check if storage is uniquely referenced. If it IS uniquely referenced, there is only one reference to it and we can just return storage. If it is NOT uniquely referenced, we have multiple references to it and need to call our copy method. For all non mutating functions, we call our storage.method which is the internal implementation. Then for mutating functions (append, remove, removeAtIndex) we call : mutableStorage.remove. 
