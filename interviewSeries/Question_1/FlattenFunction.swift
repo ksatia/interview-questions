@@ -27,9 +27,22 @@ func flatten (input: [Any]) -> [Any] {
         } else {
             outputArray.append(element)
         }
-    }
+    }*/
     
-    for e in input {
+    
+    
+    /*
+    //Using this method we can remove the obvious loop and mask it inside of the recursion
+    guard let head = input.first else {return []}
+    if let headArray = head as? [Any] {
+        return flatten(input: headArray) + flatten(input: Array(input.dropFirst()))
+    }
+    else {
+        return [head] + flatten(input: Array(input.dropFirst()))
+    }*/
+    
+    
+    /*for e in input {
         switch e {
         case let e as [Any]:
             outputArray += flatten(input: e)
@@ -38,7 +51,21 @@ func flatten (input: [Any]) -> [Any] {
         }
     }*/
     
-    return outputArray
+    /*
+     // tail optimized solution
+     func flatten(input: [Any], accumulated: [Any] = []) -> [Any] {
+     guard let head = input.first else {return accumulated}
+     if let headArray = head as? [Any] {
+     return flatten(input: Array(input.dropFirst()), accumulated: flatten(input: headArray, accumulated: accumulated))
+     }
+     else {
+     var _accumulated = accumulated
+     _accumulated.append(head)
+     
+     return flatten(input:Array(input.dropFirst())), accumulated: _accumulated)
+     }*/
+ return outputArray
+
 }
 
 
