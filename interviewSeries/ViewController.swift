@@ -13,28 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let newList = LinkedList()
-        newList.pushValueToList(value: 5)
-        newList.pushValueToList(value: 6)
-        newList.pushValueToList(value: 7)
-        newList.pushValueToList(value: 8)
-        newList.pushValueToList(value: 9)
-        newList.pushValueToList(value: 10)
-        print(newList)
-        print("testing swapped list")
-        newList.head = newList.pairwiseSwap()
-        print(newList)
-        if let head = newList.head?.value {
-            print(head)
-        }
-        if let tail = newList.tail?.value {
-            print(tail)
-        }
-        
-        //let arr = [1, 4, 5, "any", ["any"[2, 3, 4]]]
-        
-//        let arr = [1, 2, 3, [1, 2, [1, 2, 3, 4]]] as [Any]
-//        print (flatten(input: arr))
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +20,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func testFlatten (){
+        let arr = [1, 2, 3, [1, 2, [1, 2, 3, 4]]] as [Any]
+        print (flatten(input: arr))
+    }
+    
+    func testNodeSwap() {
+        //let arr = [1, 4, 5, "any", ["any", [2, 3, 4]]] as [Any]
+        let arr = [1,2,3,4,5]
+        let newList = LinkedList(array: arr)
+        print(newList)
+        print("testing swapped list")
+        
+        newList.head = newList.pairwiseSwap()
+        print(newList)
+        
+        if let head = newList.head?.value {
+            print(head)
+        }
+        
+        if let tail = newList.tail?.value {
+            print(tail)
+        }
+    }
 }
 

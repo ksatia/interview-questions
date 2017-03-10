@@ -5,7 +5,7 @@
 //  Copyright © 2017 Karan Satia. All rights reserved.
 
 import Foundation
-
+//THIS ISN'T WORKING FOR EVEN NUMBERED NODE LINKED LIST
 public class LinkedList {
     var head: Node?
     var tail: Node?
@@ -18,6 +18,17 @@ public class LinkedList {
     
     var isEmpty: Bool {
         return count == 0
+    }
+    
+    public init() {}
+    
+    convenience init(array: [Any]) {
+        //convenience initializers must always call the designated initializer
+        self.init()
+        //var _array: [Any] = flatten(input: array)
+        for element in array {
+            self.pushValueToList(value: element)
+        }
     }
     
     func pushValueToList (value: Any) {

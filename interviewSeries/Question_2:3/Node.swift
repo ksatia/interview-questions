@@ -24,3 +24,4 @@ public class Node {
         self.value = value
     }
 }
+

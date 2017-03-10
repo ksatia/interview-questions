@@ -17,6 +17,7 @@
 		2A447AFD1E67490100D10510 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A447AFC1E67490100D10510 /* Node.swift */; };
 		2A447AFF1E67490900D10510 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A447AFE1E67490900D10510 /* LinkedList.swift */; };
 		2A447B031E69D5C700D10510 /* FlattenFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A447B021E69D5C700D10510 /* FlattenFunction.swift */; };
+		2AB7CA171E73664E00F4C19A /* SumCombination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7CA161E73664E00F4C19A /* SumCombination.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2A447AFC1E67490100D10510 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		2A447AFE1E67490900D10510 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		2A447B021E69D5C700D10510 /* FlattenFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlattenFunction.swift; sourceTree = "<group>"; };
+		2AB7CA161E73664E00F4C19A /* SumCombination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SumCombination.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +108,8 @@
 				2A447ACE1E6748ED00D10510 /* AppDelegate.swift */,
 				2A447AD01E6748ED00D10510 /* ViewController.swift */,
 				2A447B011E69D56E00D10510 /* Question_1 */,
-				2A447B001E69D55A00D10510 /* Question_2 */,
+				2A447B001E69D55A00D10510 /* Question_2/3 */,
+				2AB7CA181E73666900F4C19A /* Question_4 */,
 				2A447AD21E6748ED00D10510 /* Main.storyboard */,
 				2A447AD51E6748ED00D10510 /* Assets.xcassets */,
 				2A447AD71E6748ED00D10510 /* LaunchScreen.storyboard */,
@@ -133,13 +136,14 @@
 			path = interviewSeriesUITests;
 			sourceTree = "<group>";
 		};
-		2A447B001E69D55A00D10510 /* Question_2 */ = {
+		2A447B001E69D55A00D10510 /* Question_2/3 */ = {
 			isa = PBXGroup;
 			children = (
 				2A447AFC1E67490100D10510 /* Node.swift */,
 				2A447AFE1E67490900D10510 /* LinkedList.swift */,
 			);
-			path = Question_2;
+			name = Question_2/3;
+			path = "Question_2:3";
 			sourceTree = "<group>";
 		};
 		2A447B011E69D56E00D10510 /* Question_1 */ = {
@@ -148,6 +152,14 @@
 				2A447B021E69D5C700D10510 /* FlattenFunction.swift */,
 			);
 			path = Question_1;
+			sourceTree = "<group>";
+		};
+		2AB7CA181E73666900F4C19A /* Question_4 */ = {
+			isa = PBXGroup;
+			children = (
+				2AB7CA161E73664E00F4C19A /* SumCombination.swift */,
+			);
+			path = Question_4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +301,7 @@
 				2A447AFF1E67490900D10510 /* LinkedList.swift in Sources */,
 				2A447B031E69D5C700D10510 /* FlattenFunction.swift in Sources */,
 				2A447ACF1E6748ED00D10510 /* AppDelegate.swift in Sources */,
+				2AB7CA171E73664E00F4C19A /* SumCombination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +546,7 @@
 				2A447AF51E6748ED00D10510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A447AF61E6748ED00D10510 /* Build configuration list for PBXNativeTarget "interviewSeriesTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +555,7 @@
 				2A447AF81E6748ED00D10510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A447AF91E6748ED00D10510 /* Build configuration list for PBXNativeTarget "interviewSeriesUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +564,7 @@
 				2A447AFB1E6748ED00D10510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
