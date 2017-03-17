@@ -22,7 +22,7 @@ func sumCombination (array: [Int], sum: Int)->Bool {
     return false*/
     
     for element in array {
-        if let pairHalf = dict[element] {
+        if let _ = dict[element] {
             return true
         }
         else {
