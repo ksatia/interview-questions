@@ -8,7 +8,7 @@ The reasoning behind this was initially just to practice some algorithmic challe
 
 Question List
 -------------------------------------------
-[Part 1](http://karansatia.com/blog-1/2017/2/28/interview-question-practice-series-pt-1))
+[Part 1](http://karansatia.com/blog-1/2017/2/28/interview-question-practice-series-pt-1)
 
 1. **Facebook FE Interview** Given a multi-dimensional array, write a function to flatten it without high-order functions.
 2. **Facebook iOS Interview** Recursively and iteratively pairwise swap linked list nodes. If the number of nodes is odd, leave the last node alone. If you start with `var testList = 2->5->9->15->5` your output should be `5->2->15->9->5`. 
@@ -17,5 +17,6 @@ Question List
 5. **I made this up** Design an LRU (pseudocode) cache in Swift.
 
 [Part 2](http://karansatia.com/blog-1/2017/3/17/interview-question-practice-series-pt-2)
-6. **Facebook FE Interview* Using HTML & CSS, create an image that displays another image when the user hovers over the image. Align the image to the bottom right of the screen.
+
+6. **Facebook FE Interview** Using HTML & CSS, create an image that displays another image when the user hovers over the image. Align the image to the bottom right of the screen.
 7. **Facebook iOS Interview** iOS developers have the option to create a dispatch queue that executes an action after a delay. It's difficult to cancel this dispatch queue once set up - implement a cancellable dispatch method for easy cancellation of the block.
