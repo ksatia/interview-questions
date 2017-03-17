@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.SumCombination()
+        //self.SumCombination()
+        //self.testFlatten()
+        //self.testNodeSwap()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,11 +29,11 @@ class ViewController: UIViewController {
     }
     
     func testNodeSwap() {
-        //let arr = [1, 4, 5, "any", ["any", [2, 3, 4]]] as [Any]
-        let arr = [1,2,3,4,5]
+        let arr = [1, 4, 5, "any", ["any", [2, 3, 4]]] as [Any]
+        //let arr = [1,2,3,4,5]
         let newList = LinkedList(array: arr)
         print(newList)
-        print("testing swapped list")
+        /*print("testing swapped list")
         
         newList.head = newList.pairwiseSwap()
         print(newList)
@@ -42,7 +44,7 @@ class ViewController: UIViewController {
         
         if let tail = newList.tail?.value {
             print(tail)
-        }
+        }*/
     }
 
     func SumCombination() {

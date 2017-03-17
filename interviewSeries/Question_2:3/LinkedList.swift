@@ -147,20 +147,33 @@ public class LinkedList {
 
 //MARK "PROTOCOL EXTENSIONS"
 
-//this allows us to traverse a list with (for item in list)
-extension LinkedList : Sequence {
-    public func makeIterator() -> AnyIterator<Node> {
-        var currentNode = self.head
-        return AnyIterator {
-            if let node = currentNode {
-                defer { currentNode = node.next }
-                return node
-            } else {
-                return nil
-            }
-        }
+
+
+public struct LinkedListIterator:IteratorProtocol {
+    public typealias Element = Node?
+    
+    private var currentNode: Element?
+    
+    public init(startNode: Element?) {
+        currentNode = startNode
+    }
+    
+    public mutating func next() -> LinkedListIterator.Element? {
+        let node = currentNode
+        currentNode = currentNode??.next
+        
+        return node
     }
 }
+
+extension LinkedList: Sequence {
+    public typealias Iterator = LinkedListIterator
+    
+    public func makeIterator() -> LinkedList.Iterator {
+        return LinkedListIterator(startNode: self.head)
+    }
+}
+
 
 extension LinkedList: CustomStringConvertible {
     //we can use the above sequence protocol conformance to shorten our description variable to use map -> return "[" + self.map {String($0.value)}.joinWithSeparator(" ") + "]"
