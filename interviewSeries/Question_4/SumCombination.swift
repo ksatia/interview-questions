@@ -25,3 +25,23 @@ func sumCombination (array: [Int], sum: Int)->Bool {
     return false
 }
 
+func sumCombinationTuple (array: [Int], sum: Int) -> (Int?, Int?) {
+    var dict = [Int:Int]()
+    var a, b: Int
+    var returnEarly: Bool
+    for element in array {
+        // if we already have the current value set as a key in a dict entry, it means we already encountered the sum pair (which is the value of dict[element].
+        
+        if let _ = dict[element] {
+            a = element
+            b = dict[element]!
+            return (a, b)
+        }
+        // else find the corresponding sum pair value and use that to be the key. We can look the key up on a further iteration to see if it exists. If it does, we've found a sum pair.
+        else {
+            dict[sum-element] = element
+        }
+    }
+    return (nil, nil)
+}
+
